@@ -1,0 +1,13 @@
+import /vendor/etc/init/hw/init.ranchu.rc
+
+on early-init
+    # mount debugfs
+    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+
+on early-init
+    setprop ro.test.board test
+
+on boot
+    setprop jaodroid.boot.executed 1
+
+

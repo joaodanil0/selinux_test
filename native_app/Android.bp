@@ -1,0 +1,6 @@
+cc_binary {
+    name: "readprop",
+    srcs: ["read_prop.c"],
+    shared_libs: ["libc"],
+    installable: true,
+}
