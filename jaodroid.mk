@@ -10,8 +10,9 @@ PRODUCT_MANUFACTURER    := jao
 
 
 PRODUCT_PACKAGES += \
-	readprop \
-	read_android_prop
+    mypackage.mysubpackage.fooAIDL \
+	mypackage.mysubpackage.fooAIDL-service \
+	foo_AIDL_tester
 
 
 PRODUCT_PRODUCT_PROPERTIES += ro.mydevice.feature_enabled=true ro.vendor.custom.prop=1
@@ -24,6 +25,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.kernel.test=test2 \
 	ro.custom.prop=1 \
-
-
-	

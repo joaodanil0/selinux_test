@@ -1,7 +1,0 @@
-java_binary {
-    name: "read_android_prop",
-    srcs: ["ReadAndroidProp.java"],
-    installable: true,
-    platform_apis: true, // usa android.os.SystemProperties
-    main_class: "com.jaodroid.tools.ReadAndroidProp",
-}
