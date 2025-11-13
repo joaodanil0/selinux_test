@@ -3,6 +3,8 @@
 #include <utils/Log.h>
 #include <sys/stat.h>
 
+#include <android-base/properties.h>
+
 namespace aidl::mypackage::mysubpackage::fooAIDL {
 
 // conservative|powersave|performance|schedutil
@@ -70,6 +72,15 @@ ndk::ScopedAStatus Test::getTest(std::string* _aidl_return) {
 exit:
     close(fd);
     free(data);
+    return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus Test::getProp(std::string* _aidl_return) {
+
+    std::string model = android::base::GetProperty("aaudio.mask", "unknown");
+
+    ALOGI("Test AIDL::getProp data=(%s)", model.c_str());
+    *_aidl_return = model.c_str();
     return ndk::ScopedAStatus::ok();
 }
 

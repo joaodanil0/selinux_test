@@ -4,6 +4,7 @@
 #include <string>
 
 #include <android/binder_manager.h>
+#include <android-base/properties.h>
 
 using ::aidl::mypackage::mysubpackage::fooAIDL::ITest;
 
@@ -28,12 +29,20 @@ int main(int argc, char *argv[]) {
 
     mHal = ITest::fromBinder(ndk::SpAIBinder(binder));
 
+    android::base::SetProperty("aaudio.mask", "2");
 
     mHal->getTest(&a);
     std::cout << "getScalingGovernor:" << a << std::endl;
 
-    mHal->setTest(argv[1], &c);
-    std::cout << "setScalingGovernor:" << c << std::endl;
+    
+    
+    // mHal->setTest(argv[1], &c);
+    // std::cout << "setScalingGovernor:" << c << std::endl;
+
+    mHal->getProp(&a);
+    std::cout << "Property: " << a << std::endl;
+
+
 
     mHal->getTest(&a);
     std::cout << "getScalingGovernor:" << a << std::endl;

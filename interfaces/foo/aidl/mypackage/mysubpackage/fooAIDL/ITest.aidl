@@ -4,4 +4,5 @@ package mypackage.mysubpackage.fooAIDL;
 interface ITest {
     String getTest();
     boolean setTest(in String param);
+    String getProp();
 }

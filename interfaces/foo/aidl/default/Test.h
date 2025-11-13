@@ -12,6 +12,7 @@ class Test : public BnTest {
   public:
     ndk::ScopedAStatus getTest(std::string* _aidl_return) override;
     ndk::ScopedAStatus setTest(const std::string& in_param, bool* _aidl_return) override;
+    ndk::ScopedAStatus getProp(std::string* _aidl_return) override;
 };
 
 }  // namespace aidl::mypackage::mysubpackage::fooAIDL
